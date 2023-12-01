@@ -1,51 +1,139 @@
+:root {
+	--color1: #8ECAE6;
+	--color2: #219EBC;
+	--color3: #023047;
+	--color4: #FFB703;
+	--color5: #FB8500;
+}
+
 body {
-	width: 800px;
-	margin: auto;
-	text-align: center;
 	font-family: "verdana";
-	background: beige;
+	background-color: white;
+	margin: 0;
+	text-align: center;
+}
+
+header {
+	background: url(parking.jpg) no-repeat center/100%;
+	height: 150px;
 }
 
 h1 {
-	margin: 40px;
+	font-size: 35px;
+	color: white;
+	-webkit-text-stroke: 1px var(--color3);
+	margin: 0;
+	padding-top: 55px;
+	text-align: center;
 }
 
-#parkingList {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+#response {
+	font-size: 25px;
+	margin: 40px 0;
 }
-
 
 button {
+	color: var(--color2);
+	font-weight: bold;
 	margin: 7px;
 	padding: 25px;
-	border: solid 1px #999999;
+	border: solid 3px var(--color2);
 	border-radius: 5px;
 	font-size: x-large;
 }
 
+button:hover {
+	cursor: pointer;
+}
+
 #divParkingName {
-	width: 35%;
-	padding: 25px 0;
-	border: solid 2px goldenrod;
+	width: 500px;
+	margin: auto;
+	padding: 20px 0;
+	color: white;
+	background-color: var(--color3);
+	font-weight: bold;
 	border-radius: 10px;
 }
 
-#divParkingFreeSpots, #divLocalisationParking {
-	width: 20%;
-	padding: 25px 0;
-	border: solid 2px goldenrod;
-	border-radius: 10px;
+table {
+	width: 500px;
+	margin: auto;
+	margin-top: 10px;
+	border-spacing: 15px;
+}
+
+tr {
+	height: 60px;
 }
 
 
+#divParkingFreeSpots, #divParkingTotalSpots {
+	border-radius: 10px;
+	background-color: var(--color5);
+	color: whitesmoke;
+	width: 150px;
+}
 
-#response {
-	height: 85px;
-	font-size: 25px;
+
+div#parkingList {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin: 40px 0;
+	justify-content: center;
+	width: 750px;
+	margin: auto;
+}
+
+.text-left {
+	text-align: left;
+	color: var(--color5);
+}
+
+img {
+	height: 50px;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 767px) {
+
+	h1 {
+		font-size: 26px;
+	}
+
+	#divParkingName {
+		width: 350px;
+		font-size: 22px;
+	}
+
+	#divParkingFreeSpots, #divParkingTotalSpots {
+		font-size: 25px;
+		width: 100px;
+	}
+
+	table {
+		width: 350px;
+		font-size: 20px;
+	}
+
+	tr {
+		height: 50px;
+	}
+
+	.text-left {
+		font-size: 20px;
+	}
+
+
+	div#parkingList {
+		width: 350px;
+	}
+
+	button {
+		margin: 5px;
+		padding: 15px;
+		font-size: large;
+	}
+
+
 }

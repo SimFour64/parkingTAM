@@ -7,7 +7,9 @@ const url = 'https://portail-api-data.montpellier3m.fr/offstreetparking';
 const divParkingList = document.getElementById('parkingList');
 const divParkingName = document.getElementById('divParkingName');
 const divParkingFreeSpots = document.getElementById('divParkingFreeSpots');
+const divParkingTotalSpots = document.getElementById('divParkingTotalSpots');
 const divLocalisationParking = document.getElementById('divLocalisationParking');
+const tdSyRendre = document.getElementById('tdSyRendre');
 
 // Requête sur les parkings existants et construction des boutons
 fetch(url)
@@ -33,12 +35,14 @@ fetch(url)
           .then(response => response.json())
           .then(data => {
             divParkingName.innerHTML = data[0]['name']['value'];
-            divParkingFreeSpots.innerHTML = data[0]['availableSpotNumber']['value'] + "/" + data[0]['totalSpotNumber']['value'];
+            divParkingFreeSpots.innerHTML = data[0]['availableSpotNumber']['value'];
+            divParkingTotalSpots.innerHTML = data[0]['totalSpotNumber']['value'];
 
             const coordX = data[0]['location']['value']['coordinates'][1];
             const coordY = data[0]['location']['value']['coordinates'][0];
             const urlParking = 'https://www.google.fr/maps?q=' + coordX + ',' + coordY;
-            divLocalisationParking.innerHTML = '<a href="' + urlParking + '" target="_blank">GO</a>';
+            divLocalisationParking.innerHTML = '<a href="' + urlParking + '" target="_blank"><img src="rond_orange.png"></a>';
+            tdSyRendre.innerHTML = "S'y rendre"
           })
           .catch(error => console.log(error));
       });

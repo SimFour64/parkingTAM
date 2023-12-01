@@ -2,23 +2,41 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style_index.css">
         <title>Places de parking TaM</title>
     </head>
 
     <body>
+        <header>
+            <h1>Disponibilité des parkings TaM</h1>
+        </header>
         
-        <h1>Disponibilité des parkings TaM</h1>
-        
-        <div id = 'response'>
-            <div id="divParkingName"></div>
-            <div id="divParkingFreeSpots"></div>
-            <div id="divLocalisationParking"></div>
-        </div>
-        
-        <div id='parkingList'> 
+        <section>
+            <div id = 'response'>
+                <div id="divParkingName">-</div>
+                <table>
+                    <tr>
+                        <td id="divParkingFreeSpots"></td>
+                        <td class="text-left">places disponibles</td>
+                    </tr>
+                    <tr>
+                        <td id="divParkingTotalSpots"></td>
+                        <td class="text-left">places totales</td>
+                    </tr>
+                    <tr>
+                        <td id="divLocalisationParking"></td>
+                        <td id="tdSyRendre"class="text-left"></td>
+                    </tr>
+                </table>
+                
+                
+                
+            </div>
+            
+            <div id='parkingList'></div>
 
-        </div>
+        </section>
 
 
         <script type="text/javascript" src="main.js"></script>
